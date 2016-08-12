@@ -18,7 +18,7 @@ float[][] tiles = new float[width][height];
 // Fill it with values, 0 represents blocking tile
 for (int x = 0; x < 5; x++)
     for (int y = 0; y < 5; y++)
-        tilesArray[x][y] = 1.0f;
+        tiles[x][y] = 1.0f;
 
 // Create a Grid instance
 Grid grid = new Grid(width, height, tiles);
@@ -29,7 +29,7 @@ Point target = new Point(3, 3);
 
 // Find path, this will be a list of Point's or empty list.
 // Last argument will make this search be 8 directional
-List<Point> path = PathFinding.FindPath(grid, start, target, true);
+List<Point> path = PathFinding.findPath(grid, start, target, true);
 ```
 
 You can use boolean[][] if every tile should have the same price
@@ -42,7 +42,7 @@ boolean[][] tiles = new boolean[width][height];
 // Fill it with values, false represents blocking tile
 for (int x = 0; x < 5; x++)
     for (int y = 0; y < 5; y++)
-        tilesArray[x][y] = true;
+        tiles[x][y] = true;
 
 Grid grid = new Grid(width, height, tiles);
 
@@ -50,5 +50,5 @@ Point start  = new Point(1, 1);
 Point target = new Point(3, 3);
 
 // Last argument will make this search be 4 directional
-List<Point> path = PathFinding.FindPath(grid, start, target, false);
+List<Point> path = PathFinding.findPath(grid, start, target, false);
 ```
