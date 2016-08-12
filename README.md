@@ -44,14 +44,11 @@ for (int x = 0; x < 5; x++)
     for (int y = 0; y < 5; y++)
         tilesArray[x][y] = true;
 
-// Create a Grid instance
 Grid grid = new Grid(width, height, tiles);
 
-// Create endpoints
 Point start  = new Point(1, 1);
 Point target = new Point(3, 3);
 
-// Find path, this will be a list of Point's or empty list.
 // Last argument will make this search be 4 directional
 List<Point> path = PathFinding.FindPath(grid, start, target, false);
 ```
